@@ -1,0 +1,19 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node --max_old_space_size=16000 app19q.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "big-integer": "^1.6.48",
+    "bignumber.js": "^9.0.0",
+    "bull": "^3.12.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
