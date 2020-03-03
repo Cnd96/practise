@@ -31,22 +31,32 @@ int main()
         }
         sort(evenArr.begin(), evenArr.end());
         sort(oddArr.begin(), oddArr.end());
-        if(n%2==1){
-            
+        if(n%2==0){
+            evenArr.push_back(INT_MAX);
         }
         bool ok=true;
+        int breakpoint;
+        // for (auto j = evenArr.cbegin(); j != evenArr.cend(); ++j){
+        //         cout<<*j<<endl;       
+        // }
         for(int j =0;j<(n/2);j++){
             if(evenArr[j]>oddArr[j]){
                 ok=false;
+                breakpoint=(j*2);
                 break;
             }
             else if(oddArr[j]>evenArr[j+1])
             {
-                /* code */
+                ok=false;
+                breakpoint=(j*2)+1;
+                break;
             }
-            
-            cout<<oddArr[j]<<endl;
         }
-        
+        if(ok){
+            cout<<"Case #"<<i<<": OK"<<endl;
+        }else{
+            cout<<"Case #"<<i<<": "<<breakpoint<<endl;
+        }
+       
     }    
 }

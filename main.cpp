@@ -4,8 +4,15 @@
 #include <string> 
 using namespace std;
 
+bool sortcol( const vector<int>& v1, 
+               const vector<int>& v2 ) { 
+ return v1[1] > v2[1]; 
+} 
 int main()
 {
+    //array sort
+    int od[5];
+    sort(od, od+5, greater<int>()); 
    //string loop
     string s;
     for(int j=0 ; j<s.size();j++){
@@ -28,6 +35,17 @@ int main()
             cout<<*j<<endl;
     }
 
+    //vector sort
+    vector<int> d;
+    sort(d.begin(), d.end(), greater<int>());
+    // Multi D vector and sort by column
+    vector<vector<long long> > pdata(5); 
+    for(int j=0;j<5;j++){
+            pdata[j] = vector<long long>(2); 
+            pdata[j][0]=j;
+            pdata[j][1]=2;
+    }
+    sort(pdata.begin(), pdata.end(),sortcol); 
 }
 
 
