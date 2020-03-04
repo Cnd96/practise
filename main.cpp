@@ -10,6 +10,9 @@ bool sortcol( const vector<int>& v1,
 } 
 int main()
 {
+    string str ="asddddas";
+    // Deletes 4 characters from index number 1 
+    str.erase(1, 4); 
     //array sort
     int od[5];
     sort(od, od+5, greater<int>()); 
