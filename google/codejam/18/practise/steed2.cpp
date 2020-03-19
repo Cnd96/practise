@@ -25,7 +25,8 @@ int main()
            }
        }
        double maxSpeed=d/maxTime;
-       cout<<"Case #"<<i<<": "<<fixed<<setprecision(6)<<maxSpeed<<endl;
+    //    cout<<"Case  ......"<<maxSpeed<<endl;
+       cout<<"Case #"<<i<<": "<<fixed<<setprecision(6)<<maxSpeed<<"  "<<maxSpeed<<endl;
     }  
     return 0;  
 }

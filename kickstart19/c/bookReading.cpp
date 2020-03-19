@@ -3,10 +3,11 @@
 #include <vector>
 #include <string>
 using namespace std;
-#define lim 12
+#define lim 100001
+
 int main()
 {
-
+    int xx=0;
     vector<int> odata[lim];
     for (int i = 1; i < lim; i++)
     {
@@ -26,46 +27,58 @@ int main()
             }
         }
     }
-    // for (int i = 1; i < lim; i++)
-    // {
-    //     cout << i << " :";
-    //     for (int j=0;j<odata[i].size();j++)
-    //     {
-    //         cout << odata[i][j] << ",";
-    //     }
-    //     cout<<endl;
-    // }
 
     int t;
     cin >> t;
     for (int i = 1; i <= t; i++)
     {
-        int n, m, q, tornPage;
+        int n, m, q, tornPage, noPages;
+        int totalPages = 0;
+        int goodP = 0;
         vector<int> goodPageNmubers;
+        bool pageData[lim] = {0};
         int currentPage = 1;
         cin >> n >> m >> q;
+        int qArr[q];
         for (int j = 0; j < m; j++)
         {
             cin >> tornPage;
             while (currentPage < tornPage)
             {
-                goodPageNmubers.push_back(currentPage);
+                pageData[currentPage] = 1;
                 currentPage++;
-                /* code */
+                goodP++;
             }
             currentPage++;
         }
         while (currentPage <= n)
         {
-            goodPageNmubers.push_back(currentPage);
+            pageData[currentPage] = 1;
             currentPage++;
-            /* code */
+            goodP++;
         }
-        if(goodPageNmubers.size()==0){}
-        for (auto j = goodPageNmubers.cbegin(); j != goodPageNmubers.cend(); ++j)
+        for (int j = 0; j < q; j++)
         {
-            cout << *j << " ";
+            cin >> qArr[j];
         }
+        if (goodP != 0)
+        {
+           
+            for (int j = 0; j < q; j++)
+            {
+                for (int k = 0; k < odata[qArr[j]].size(); k++)
+                {
+                    totalPages += pageData[odata[qArr[j]][k]];
+                    xx++;
+                    if(odata[qArr[j]][k]>n){
+                        break;
+                    }
+                }
+            }
+        }
+        cout << "Case #" << i << ": " << totalPages <<endl;
     }
+    cout<<"xx :"<<xx;
     return 0;
 }
+

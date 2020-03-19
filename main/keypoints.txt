@@ -1,0 +1,38 @@
+1.Decimal
+*codeJam18 practise steed2
+
+2.Combinations of fixed size array of array(vector)
+*codeJam18 roundc aWholenewword
+
+3.All the combination of all sizes
+*main permuations
+
+4.Loop
+    Okay
+    int qw[]={1,3,5,6};
+    set<int> dd;
+    long long jjj=0;
+    for (int i = 0; i < 100000; i++)
+    {
+        for (int j = 0; j < 26; j++)
+        {
+            jjj++;
+            // dd.insert(qw,qw+4);
+            // qw[3]++;
+        }
+        /* code */
+    }
+    Okay if no insertion to set
+    int qw[]={1,3,5,6};
+    set<int> dd;
+    long long jjj=0;
+    for (int i = 0; i < 100000; i++)
+    {
+        for (int j = 0; j < 1000; j++)
+        {
+            jjj++;
+            12+2;
+            dd.insert(qw,qw+4);
+        }
+        /* code */
+    }
